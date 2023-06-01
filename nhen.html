@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=0.5, user-scalable=0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Nhen</title>
+    <style>
+        #main {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        body {
+            color: white;
+            background-color: black;
+        }
+
+        h1 {
+            color: red;
+            font-size: 80px;
+        }
+        .button {
+            background-color: black;
+        }
+    </style>
+    <script>
+        function search() {
+            const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+            y = document.getElementById("year").value;
+            m = document.getElementById("month").value;
+            d = document.getElementById("day").value;
+            y_new = 0
+            if(y<2000) {
+                y_new = y[0] + y[3]
+                console.log(y_new);
+            }
+            else { 
+                y_new = y[2] + y[3]
+            }
+
+            var index = 1
+            m_final= "0";
+            for(i in months) {
+                console.log(index);
+                if(months[i] == m) {
+                    m_final = months[i];
+                    console.log(m_final);
+                    break
+                }
+                index++;
+            }
+            if(index<10) {
+            m_final_final = "0" + index.toString()}
+            else {
+                m_final_final= index.toString()
+            }
+            console.log(m_final_final);
+
+
+            console.log(y[2]+y[3]+m_final_final+d);
+            window.location.href = "https://nhentai.to/search?q="+y_new+m_final_final+d
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" id="main">
+                <h1>
+                    Nhentai Birthday translator!!
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12" id="main">
+                <p>Give your birth year <br>
+                    *note: if you were born before 2000 your year id will be 1 and the year's number on the ones place cuz theres not enough hentai xdd*
+                </p> <br>
+                <input type="number" id="year" min="1950" size="50">
+                <p>Give your birth month</p> <br>
+                <select name="month" id="month">
+                    <option id="01">January</option>
+                    <option id="02">February</option>
+                    <option id="03">March</option>
+                    <option id="04">April</option>
+                    <option id="05">May</option>
+                    <option id="06">June</option>
+                    <option id="07">July</option>
+                    <option id="08">August</option>
+                    <option id="09">September</option>
+                    <option id="10">October</option>
+                    <option id="11">November</option>
+                    <option id="12">December</option>
+                </select>
+                <p>Give birth day</p> <br>
+                <input id="day" type="number" min="1" max="31"> <br>
+                <button class="button" onclick="search()"><img height="500" width="500" src="pitah.png" alt="anyad"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
