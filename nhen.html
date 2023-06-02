@@ -14,16 +14,24 @@
         }
 
         body {
-            color: white;
-            background-color: black;
+            color: rgb(236, 75, 196);
+            background-color: rgb(36,36,36);
         }
 
         h1 {
-            color: red;
+            color: rgb(195, 0, 255);
             font-size: 80px;
         }
         .button {
-            background-color: black;
+            background-color:  rgb(236, 75, 196);
+        }
+
+        #month {
+            background-color: rgb(85,85,85);
+        }
+
+        input {
+            background-color: rgb(85, 85, 85);
         }
     </style>
     <script>
@@ -76,11 +84,9 @@
         </div>
         <div class="row">
             <div class="col-lg-12" id="main">
-                <p>Give your birth year <br>
-                    *note: if you were born before 2000 your year id will be 1 and the year's number on the ones place cuz theres not enough hentai xdd*
-                </p> <br>
-                <input type="number" id="year" min="1950" size="50">
-                <p>Give your birth month</p> <br>
+                <p> Give your birth year:</p> 
+                <input type="number" id="year" min="1950" size="50"> <br>
+                <p>Give your birth month:</p>
                 <select name="month" id="month">
                     <option id="01">January</option>
                     <option id="02">February</option>
@@ -94,10 +100,10 @@
                     <option id="10">October</option>
                     <option id="11">November</option>
                     <option id="12">December</option>
-                </select>
-                <p>Give birth day</p> <br>
-                <input id="day" type="number" min="1" max="31"> <br>
-                <button class="button" onclick="search()"><img height="500" width="500" src="pitah.png" alt="anyad"></button>
+                </select> <br>
+                <p>Give birth day:</p>
+                <input id="day" type="number" min="1" max="31"> <br> <br>
+                <button class="button" onclick="search()">Search Hentai</button>
             </div>
         </div>
     </div>
