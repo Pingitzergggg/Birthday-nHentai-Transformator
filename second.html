@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=0.5, user-scalable=0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Nhen</title>
+    <style>
+        #main {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        body {
+            color: rgb(75, 105, 236);
+            background-color: rgb(36,36,36);
+        }
+
+        h1 {
+            color: rgb(0, 179, 255);
+            font-size: 80px;
+        }
+        .button {
+            background-color:  rgb(0, 179, 255);
+        }
+
+        #month {
+            background-color: rgb(85,85,85);
+        }
+
+        input {
+            background-color: rgb(85, 85, 85);
+        }
+    </style>
+    <script>
+        function search() {
+            const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+            code = document.getElementById("code").value;
+            y = code[0] + code[1];
+            m = code[2] + code[3];
+            d = code[4] + code[5];
+            backup = document.getElementById("year").value;
+            console.log(y);
+            console.log(m);
+            console.log(d);
+
+            if (y[0] == 2) {
+                y = "200" + y[1];
+            }
+            else if (y[0] == 1) {
+                y = backup;
+            }
+
+            if (m[0] == 0) {
+                m = m[1];
+            }
+
+            m = months[Number(m)-1]
+
+            final = y+m+d
+            console.log(final)
+            window.location.href = "https://takemeback.to/" + d + '-' + m + '-' + y
+        }
+
+
+            //https://takemeback.to/18-April-2006
+           // window.location.href = "https://nhentai.to/search?q="+y_new+m_final_final+d
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p id="nav_p">
+            <nav class="navbar navbar-expand-lg navbar-light bg-red">
+              <a class="navbar-brand" href="#">Home</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-tabs bg-red">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Birthday to Hentai<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="second.html">Hentai to Birthday</a>
+                  </li> 
+                </ul>
+              </div>
+            </nav>
+        </p>
+        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" id="main">
+                <h1>
+                    Nhentai to  Birthday translator!!
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12" id="main">
+                <p> Give nHentai code:</p> 
+                <input type="number" id="code" size="50"> <br>
+                <p> I you were born before 2000, give the birth year:</p>
+                <input type="number" id="year" min="1900" size="50"> <br>
+                <button class="button" onclick="search()">Search Hentai</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
